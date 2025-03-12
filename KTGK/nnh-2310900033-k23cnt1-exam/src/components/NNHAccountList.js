@@ -7,30 +7,31 @@ export default class NnhAccountList extends Component {
 
     // }
     //Ham su ly su kien view
-    nnhHandleView = (NnhStudent)=>{
+    nnhHandleView = (NnhStudent) => {
         //chuyen du lieu len NnhApp
-        this.props.onnnhHandleView(NnhStudent); 
+        this.props.onnnhHandleView(NnhStudent);
 
     }
 
 
     render() {
         //lay du lieu trong props tu NnhApp chuyen xuong
-        let {RenderNnhStudents} = this.props;
-        console.log("List:",RenderNnhStudents);
+        let { RenderNnhStudents } = this.props;
+        console.log("List:", RenderNnhStudents);
 
-         //chuyen du lieu vao nnhStudent de hien thi
-         let NnhElementStudent = RenderNnhStudents.map((nnhItem,index)=>{
+        //chuyen du lieu vao nnhStudent de hien thi
+        let NnhElementStudent = RenderNnhStudents.map((nnhItem, index) => {
             return <NnhAccountAdd key={index} RenderNnhStudent={nnhItem} onnnhHandleView={this.nnhHandleView} />
-         })
+        })
         return (
-       
+
             <div className="card-body">
                 <h3 className="card-title">Danh sách sinh viên</h3>
                 <div className="table-responsive pt-3">
                     <table className="table table-bordered">
                         <thead>
                             <tr>
+
                                 <th>#</th>
                                 <th>Mã sinh viên</th>
                                 <th>Tên sinh viên</th>
@@ -38,13 +39,19 @@ export default class NnhAccountList extends Component {
                                 <th>amount</th>
                                 <th>Hành động</th>
                             </tr>
+
                         </thead>
                         <tbody>
-                           
-                           {NnhElementStudent}
-                           
-                           
+
+                            {NnhElementStudent}
+
+
                         </tbody>
+                        <div className="col-7 ">
+                            <button type="button" className="btn btn-danger btn-icon-text">
+                                Thêm mới sinh viên
+                            </button>
+                        </div>
                     </table>
                 </div>
             </div>

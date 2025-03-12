@@ -6,15 +6,15 @@ class NnhAccountAdd extends Component {
 
     // }
     //Ham su lys chuc nang xem
-    nnhHandleView = (NnhStudent)=>{
+    nnhHandleView = (NnhStudent) => {
         //chuyen len NnhStudentList
         this.props.onnnhHandleView(NnhStudent);
 
     }
     render() {
         //lay doi tuong du lieu chuyen tu NnhStudentList
-        let{RenderNnhStudent, key} = this.props;
-        console.log("Student:",RenderNnhStudent);
+        let { RenderNnhStudent, key } = this.props;
+        console.log("Student:", RenderNnhStudent);
         return (
             <>
                 <tr>
@@ -24,11 +24,12 @@ class NnhAccountAdd extends Component {
                     <td>{RenderNnhStudent.nnhEmail}</td>
                     <td>{RenderNnhStudent.nnhAmount}</td>
                     <td>
+                        
                         <div className="template-demo">
                             <button
                                 type="button"
                                 className="btn btn-danger btn-icon-text"
-                                onClick={()=>this.nnhHandleView(RenderNnhStudent)}            
+                                onClick={() => this.nnhHandleView(RenderNnhStudent)}
                             >
                                 Xem
                             </button>
@@ -45,9 +46,12 @@ class NnhAccountAdd extends Component {
                                 Xóa
                             </button>
                         </div>
+
                     </td>
                 </tr>
+                
             </>
+            
         );
     }
 }
