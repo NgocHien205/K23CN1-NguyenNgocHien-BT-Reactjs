@@ -1,31 +1,55 @@
-import React, { NNHUseState }from 'react'
+import React, { Component } from 'react';
 
-function NNHAccountAdd({ NNHAccounts, NNHSetAccounts }) {
-    const NNHAccountAdd = ({ NNHaddAccount }) => {
-        const [NNHid, NNHsetId] = NNHUseState("");
-        const [NNHname, NNHsetName] = NNHUseState("");
-        const [NNHemail, NNHsetEmail] = NNHUseState("");
-        const [NNHamount, NNHsetAmount] = NNHUseState("");
-    
-        const NNHhandleSubmit = (e) => {
-            e.preventDefault();
-            NNHaddAccount({ NNHid, NNHname, NNHemail, NNHamount: Number(NNHamount) });
-            NNHsetId("");
-            NNHsetName("");
-            NNHsetEmail("");
-            NNHsetAmount("");
-        };
-    
+class NnhAccountAdd extends Component {
+    // constructor(props){
+    //     super(props);
+
+    // }
+    //Ham su lys chuc nang xem
+    nnhHandleView = (NnhStudent)=>{
+        //chuyen len NnhStudentList
+        this.props.onnnhHandleView(NnhStudent);
+
+    }
+    render() {
+        //lay doi tuong du lieu chuyen tu NnhStudentList
+        let{RenderNnhStudent, key} = this.props;
+        console.log("Student:",RenderNnhStudent);
         return (
-            <form onSubmit={NNHhandleSubmit}>
-                <h2>Thêm tài khoản mới</h2>
-                <input type="text" placeholder="ID" value={NNHid} onChange={(e) => NNHsetId(e.target.value)} required />
-                <input type="text" placeholder="Họ và tên" value={NNHname} onChange={(e) => NNHsetName(e.target.value)} required />
-                <input type="email" placeholder="Email" value={NNHemail} onChange={(e) => NNHsetEmail(e.target.value)} required />
-                <input type="number" placeholder="Số dư" value={NNHamount} onChange={(e) => NNHsetAmount(e.target.value)} required />
-                <button type="submit">Thêm</button>
-            </form>
+            <>
+                <tr>
+                    <td>{key}</td>
+                    <td>{RenderNnhStudent.nnhId}</td>
+                    <td>{RenderNnhStudent.nnhStudentName}</td>
+                    <td>{RenderNnhStudent.nnhEmail}</td>
+                    <td>{RenderNnhStudent.nnhAmount}</td>
+                    <td>
+                        <div className="template-demo">
+                            <button
+                                type="button"
+                                className="btn btn-danger btn-icon-text"
+                                onClick={()=>this.nnhHandleView(RenderNnhStudent)}            
+                            >
+                                Xem
+                            </button>
+                            <button
+                                type="button"
+                                className="btn btn-warning btn-icon-text"
+                            >
+                                Sửa
+                            </button>
+                            <button
+                                type="button"
+                                className="btn btn-success btn-icon-text"
+                            >
+                                Xóa
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </>
         );
-    };
+    }
 }
-export default NNHAccountAdd;
+
+export default NnhAccountAdd;
