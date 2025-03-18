@@ -1,0 +1,28 @@
+{
+    "users":[
+        {
+            "nnhFullName":"Nguyen Ngoc Hien",
+            "nnhAge":20,
+            "nnhClass":"K23CNT1",
+            "nnhId":"cn1"
+        },
+        {
+            "nnhFullName":"Tran Tien Anh",
+            "nnhAge":20,
+            "nnhClass":"K23CNT2",
+            "nnhId":"cn2"
+        },
+        {
+            "nnhFullName":"Vu Mai Chi",
+            "nnhAge":21,
+            "nnhClass":"K23CNT3",
+            "nnhId":"cn3"
+        }
+    ],
+    "students":[
+        {
+            "studentId":"SV001",
+            "studentName":"Nguyen Cong Tung"
+        }
+    ]
+}
