@@ -1,0 +1,28 @@
+{
+    "users":[
+        {
+            "nnh_Name":"Nguyen Ngoc Hien",
+            "nnh_email":"nguyenhien@gmail.com",
+            "nnh_phone":"033000220",
+            "Id":"13"
+        },
+        {
+            "nnh_Name":"2",
+            "nnh_email":"2@2.2",
+            "nnh_phone":"2",
+            "Id":"2"
+        },
+        {
+            "nnh_Name":"3",
+            "nnh_email":"n3",
+            "nnh_phone":"3",
+            "Id":"1"
+        }
+    ],
+    "students":[
+        {
+            "studentId":"SV001",
+            "studentName":"  4"
+        }
+    ]
+}
